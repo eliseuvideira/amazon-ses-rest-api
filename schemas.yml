@@ -53,3 +53,41 @@ components:
         author:
           type: string
           example: Herman Melville
+
+    mailsPostRequestBody:
+      type: object
+      properties:
+        type:
+          type: string
+          enum: [text, html]
+          example: text
+        from:
+          type: string
+          example: Company Name Support Team <support@company.com>
+        to:
+          type: array
+          items:
+            type: string
+            format: email
+            example: email@example.com
+        subject:
+          type: string
+          example: Very Important Message
+        body:
+          type: string
+          example: Hello There!
+      required:
+        - type
+        - from
+        - to
+        - subject
+        - body
+
+    mailsPostResponseBody:
+      type: object
+      properties:
+        MessageId:
+          type: string
+          example: 020f117929beeeec-b7c32249-a20e-4eee-8125-da9d2d685fa9-000000
+      required:
+        - MessageId

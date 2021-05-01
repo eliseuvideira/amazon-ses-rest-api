@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 
 services:
   api:
@@ -7,6 +7,10 @@ services:
       - NODE_ENV=production
       - PORT=$PORT
       - API_NAME=$API_NAME
+      - API_TOKEN=$API_TOKEN
+      - AWS_SES_ACCESS_KEY_ID=$AWS_SES_ACCESS_KEY_ID
+      - AWS_SES_SECRET_ACCESS_KEY=$AWS_SES_SECRET_ACCESS_KEY
+      - AWS_SES_REGION=$AWS_SES_REGION
     ports:
       - $PORT:$PORT
     restart: always
