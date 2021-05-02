@@ -84,6 +84,13 @@
   dependencies:
     mongoose "^5.12.6"
 
+"@ev-fns/object-fns@^0.2.3":
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/@ev-fns/object-fns/-/object-fns-0.2.3.tgz#1e9badb301cd9427688cc1157f84327ab449fb53"
+  integrity sha512-NWSEfoFTLfdb4J2zUrxLBZxk6D8z1QJA6IFQV4uCm4cHOZ3GqUE/ppEgpkgceWn6v93NqGuayJcgcK7rK8vXew==
+  dependencies:
+    "@ev-fns/string-fns" "^0.1.1"
+
 "@ev-fns/openapi@^0.2.0":
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/@ev-fns/openapi/-/openapi-0.2.0.tgz#04b6ad4a442b00e96b9411cdf8624b9aa0d849d7"
@@ -106,6 +113,11 @@
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/@ev-fns/spawn/-/spawn-0.1.2.tgz#25e0cc47dbd7c37f230c7a11494edadf948dbd7d"
   integrity sha512-Qk79zkYq0lacHNm47b/EKrvHzuQ4AtO/UDWQBj2J98g0sh3PzEm9L2kXTkew+MeKf8TN0IFQEHTFneK6iju2hg==
+
+"@ev-fns/string-fns@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@ev-fns/string-fns/-/string-fns-0.1.1.tgz#a0246c4ec6ab9dcd59f3c9b8a4e4353bf6c079dd"
+  integrity sha512-g2L9YJnIqADVaIUxR2pnxBzLL42ZfogdzIcaJV8yhN0/T2PcpomdLTL9SqWG6AVuK6EDh+uTgqZwEGYjP+q+yA==
 
 "@ev-fns/validation@^0.1.2":
   version "0.1.2"

@@ -30,6 +30,7 @@
     "@ev-fns/endpoint": "^0.1.2",
     "@ev-fns/errors": "^0.1.1",
     "@ev-fns/mongo": "^0.1.3",
+    "@ev-fns/object-fns": "^0.2.3",
     "@ev-fns/openapi": "^0.2.0",
     "@ev-fns/server": "^0.2.1",
     "@ev-fns/spawn": "^0.1.2",
