@@ -14,10 +14,57 @@ components:
       required:
         - message
 
-    mailsPostRequestBody:
+    Email:
       type: object
       properties:
-        type:
+        emailId:
+          type: string
+          example: 608e0fde288690fa5f9e4c92
+        format:
+          type: string
+          enum: [text, html]
+          example: text
+        to:
+          type: array
+          items:
+            type: string
+            format: email
+            example: email@example.com
+        from:
+          type: string
+          example: Company Name Support Team <support@company.com>
+        subject:
+          type: string
+          example: Very Important Message
+        body:
+          type: string
+          example: Hello There!
+        sesMessageId:
+          type: string
+          example: 020f117929beeeec-b7c32249-a20e-4eee-8125-da9d2d685fa9-000000
+        createdAt:
+          type: string
+          format: date-time
+          example: 2021-05-02T02:35:10.150Z
+        updatedAt:
+          type: string
+          format: date-time
+          example: 2021-05-02T02:35:10.150Z
+      required:
+        - emailId
+        - format
+        - to
+        - from
+        - subject
+        - body
+        - sesMessageId
+        - createdAt
+        - updatedAt
+
+    emailsPostRequestBody:
+      type: object
+      properties:
+        format:
           type: string
           enum: [text, html]
           example: text
@@ -37,13 +84,13 @@ components:
           type: string
           example: Hello There!
       required:
-        - type
+        - format
         - from
         - to
         - subject
         - body
 
-    mailsPostResponseBody:
+    emailsPostResponseBody:
       type: object
       properties:
         MessageId:

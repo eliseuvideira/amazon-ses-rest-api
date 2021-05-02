@@ -1,8 +1,8 @@
 import Joi from "joi";
 
-export const mailsPostBody = Joi.object()
+export const emailsPostBody = Joi.object()
   .keys({
-    type: Joi.valid("text", "html").default("text"),
+    format: Joi.valid("text", "html").default("text"),
     from: Joi.string().required(),
     to: Joi.array().items(Joi.string().email().required()).required(),
     subject: Joi.string().required(),
