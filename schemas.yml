@@ -24,15 +24,20 @@ components:
           type: string
           enum: [text, html]
           example: text
+        from:
+          type: string
+          example: Company Name Support Team <support@company.com>
+        replyTo:
+          type: array
+          items:
+            type: string
+            example: Company Name Support Team <support@company.com>
         to:
           type: array
           items:
             type: string
             format: email
             example: email@example.com
-        from:
-          type: string
-          example: Company Name Support Team <support@company.com>
         subject:
           type: string
           example: Very Important Message
@@ -53,8 +58,9 @@ components:
       required:
         - emailId
         - format
-        - to
+        - replyTo
         - from
+        - to
         - subject
         - body
         - sesMessageId
@@ -71,6 +77,11 @@ components:
         from:
           type: string
           example: Company Name Support Team <support@company.com>
+        replyTo:
+          type: array
+          items:
+            type: string
+            example: Company Name Support Team <support@company.com>
         to:
           type: array
           items:

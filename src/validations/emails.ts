@@ -4,6 +4,7 @@ export const emailsGetManyQuery = Joi.object()
   .keys({
     format: Joi.valid("text", "html"),
     from: Joi.string(),
+    replyTo: Joi.string(),
     to: Joi.string(),
     subject: Joi.string(),
     sesMessageId: Joi.string(),
@@ -16,6 +17,7 @@ export const emailsPostBody = Joi.object()
   .keys({
     format: Joi.valid("text", "html").default("text"),
     from: Joi.string().required(),
+    replyTo: Joi.array().items(Joi.string().required()),
     to: Joi.array().items(Joi.string().email().required()).required(),
     subject: Joi.string().required(),
     body: Joi.string().required(),

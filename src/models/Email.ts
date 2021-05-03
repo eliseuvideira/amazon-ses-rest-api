@@ -4,6 +4,7 @@ import { Document } from "mongoose";
 interface EmailProps {
   format: "text" | "html";
   from: string;
+  replyTo: string[];
   to: string[];
   subject: string;
   body: string;
@@ -26,6 +27,12 @@ export const Email = createModel<EmailProps>(
         type: String,
         required: true,
       },
+      replyTo: [
+        {
+          type: String,
+          required: true,
+        },
+      ],
       to: [
         {
           type: String,
@@ -56,6 +63,7 @@ export const parseEmail = ({
   format,
   to,
   from,
+  replyTo,
   subject,
   body,
   sesMessageId,
@@ -66,6 +74,7 @@ export const parseEmail = ({
   format,
   to,
   from,
+  replyTo,
   subject,
   body,
   sesMessageId,

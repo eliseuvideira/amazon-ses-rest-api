@@ -16,10 +16,14 @@ export const emailsGetMany = endpoint(async (req, res) => {
 });
 
 export const emailsPost = endpoint(async (req, res) => {
-  const { format, from, to, subject, body } = req.body as Record<string, any>;
+  const { format, from, replyTo, to, subject, body } = req.body as Record<
+    string,
+    any
+  >;
 
   const response = await sendEmail({
     Source: from,
+    ReplyToAddresses: replyTo || [from],
     Destination: {
       ToAddresses: to,
     },
@@ -48,6 +52,7 @@ export const emailsPost = endpoint(async (req, res) => {
   const email = await Email.create({
     format,
     from,
+    replyTo: replyTo || [from],
     to,
     subject,
     body,
